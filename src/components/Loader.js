@@ -3,13 +3,13 @@ import { Player } from '@lottiefiles/react-lottie-player';
 import LoadingAnimation from '../images/animations/loading.json'
 
 
-const Loader = ({visibility}) => {
+const Loader = () => {
   return (
     <Player
     src={LoadingAnimation}
     autoplay
     loop
-    className={`w-64 h-64 ${visibility}`}>
+    className={`w-36 h-36 md:w-64 md:h-64`}>
     </Player>
   )
 }

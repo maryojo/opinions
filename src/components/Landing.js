@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from "react-redux";
 const Landing = () => {
   const navigate = useNavigate();
 
-
   const [searchInput, setSearchInput] = useState('');
 
   console.log(searchInput)
