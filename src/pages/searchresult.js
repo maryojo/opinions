@@ -7,6 +7,7 @@ import Error from "../components/Error";
 import Comments from "../components/Comments";
 import Sidebar from "../components/Sidebar";
 import DataAnalysis from "../components/DataAnalysis";
+import { textAnalysis, keyPhraseExtraction } from "../components/SentimentAnalysis";
 
 // import { getSentimentScore } from '../model/sentimentAnalysis'
 
@@ -27,7 +28,6 @@ const SearchResult = () => {
   });
 
   console.log(data);
-  console.log(loading);
   console.log(error);
 
   // const convertToSentence = (text) =>{
@@ -48,9 +48,14 @@ const SearchResult = () => {
 
   console.log(tweetArr);
 
-  // const handleTweet = (tweet) =>{
-  //   // console.log(getSentimentScore(tweet));
-  // }
+  const documents = [
+    "I did not like the restaurant. The food was too spicy.",
+    "The restaurant was decorated beautifully. The atmosphere was unlike any other restaurant I've been to.",
+    "The food was yummy.",
+  ];
+
+  textAnalysis(documents);
+  keyPhraseExtraction(documents);
 
 
   return (
