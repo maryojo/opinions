@@ -7,7 +7,7 @@ import Error from "../components/Error";
 import Comments from "../components/Comments";
 import Sidebar from "../components/Sidebar";
 import DataAnalysis from "../components/DataAnalysis";
-import { textAnalysis, keyPhraseExtraction } from "../components/SentimentAnalysis";
+// import { textAnalysis, keyPhraseExtraction } from "../components/SentimentAnalysis";
 
 // import { getSentimentScore } from '../model/sentimentAnalysis'
 
@@ -54,8 +54,8 @@ const SearchResult = () => {
     "The food was yummy.",
   ];
 
-  textAnalysis(documents);
-  keyPhraseExtraction(documents);
+  // textAnalysis(documents);
+  // keyPhraseExtraction(documents);
 
 
   return (

@@ -6,6 +6,7 @@ import axios from "axios";
 import { FcSearch } from 'react-icons/fc'
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import MyBadge from "./MyBadge";
 
 
 const Landing = () => {
@@ -83,6 +84,7 @@ const Landing = () => {
         <img src={People} alt="" className="hidden sm:block w-10/12 md:w-8/12 lg:w-6/12" />
         <img src={PeopleSm} alt="" className="block sm:hidden w-8/12 " />
       </div>
+      {/* <MyBadge/> */}
     </div>
   );
 };
