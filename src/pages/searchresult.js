@@ -19,6 +19,9 @@ const SearchResult = () => {
   let tweetError = '';
   let tweetLoading = false;
 
+  const mediaDataArr = [];
+  const dateTimeDataArr = [];
+
   //stored data in localstorage for development 
 
   if(localStorage.getItem('tweetArr')) {
@@ -68,8 +71,12 @@ const SearchResult = () => {
   if (data) {
     Object.entries(data?.globalObjects?.tweets).map(([key, value]) => {
       tweetArr.push(value?.full_text);
+      mediaDataArr.push(value?.entities?.media);
+      dateTimeDataArr.push(value?.created_at);
     });
+
   }
+  // console.log(mediaDataArr);
 
   console.log(tweetArr);
 
@@ -97,7 +104,7 @@ const SearchResult = () => {
           
           <div className="flex justify-between">
            <Sidebar />
-           <Comments tweets={tweetArr} />
+           <Comments tweets={tweetArr} mediaData={mediaDataArr} timeData={dateTimeDataArr}/>
            {/* <DataAnalysis /> */}
           </div>
         </div>
