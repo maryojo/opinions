@@ -12,14 +12,12 @@ const TweetMedia = (data) => {
       mediaInfo = media[0];
       }
   });
-  
-
 
 
   if (mediaInfo?.type === "photo"){
     return (
-      <div>
-        <img src={mediaInfo?.media_url}/>
+      <div className='w-100 bg-cover'>
+        <img src={mediaInfo?.media_url} className="h-3/4"/>
       </div>
     )
   } 

@@ -12,9 +12,9 @@ const DateTime = (commentDateTime) => {
     commentDate = "Today";
   }
   return (
-    <div className='flex justify-between'>
-      <p>{commentDate}</p>
-      <p>{commentTime}</p>
+    <div className='flex justify-between mt-5 text-slate-500'>
+      <p className='text-sm'>{commentDate}</p>
+      <p className='text-sm'>{commentTime}</p>
     </div>
   )
 }

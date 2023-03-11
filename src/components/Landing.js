@@ -1,36 +1,19 @@
 import React, { useState, useEffect } from "react";
 import People from "../images/people.png";
 import PeopleSm from "../images/people_sm.png"
-import logo from "../images/logo.png";
+import Logo from "./Logo";
 import axios from "axios";
-import { FcSearch } from 'react-icons/fc'
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import MyBadge from "./MyBadge";
+import Search from "./Search";
 
 
 const Landing = () => {
-  const navigate = useNavigate();
-
-  const [searchInput, setSearchInput] = useState('');
-
-  console.log(searchInput)
-
-  const handleChange = (e) => {
-    e.preventDefault();
-    setSearchInput(e.target.value);
-  };
-
-  const handleKeyDown = (e) =>{
-    if(e.key === 'Enter'){
-     return navigate(`/search/${searchInput}`);
-    }
-  }
-
   return (
     <div className="h-screen w-screen relative pt-5 sm:pt-10 p-3 sm:p-10 md:p-14 pb-0">
       <div className="flex justify-between items-center">
-        <img src={logo} alt="" className="w-[2.7rem] sm:w-[3.5rem] md:w-[4.2rem]" />
+        <Logo/>
         <div className="flex gap-3">
           <svg
            
@@ -59,20 +42,7 @@ const Landing = () => {
       </div>
       <div className="flex flex-row justify-center gap-7 mt-10">
         <div className="flex flex-col gap-10 justify-center">
-          <div className="flex gap-2  relative">
-            <input
-              type="text"
-              className="rounded-full px-3 py-2 sm:px-5 sm:py-3 bg-gray-200 w-full "
-              placeholder="Search"
-              onInput={handleChange}
-              value={searchInput}
-              onKeyDown={handleKeyDown}
-            />
-            <Link to={`/search/${searchInput}`}>
-              <FcSearch className="absolute right-5 z-10 cursor-pointer top-[25%] w-4 h-4 sm:w-6 sm:h-6"/>
-            </Link>
-          </div>
-
+          <Search/>
           <div>
             <p className="text-lg sm:text-xl font-medium text-center">
               Get insight about your service performance
