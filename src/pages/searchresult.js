@@ -127,7 +127,7 @@ const SearchResult = () => {
     <div className="p-16">
       <div className="flex justify-between">
         <div>
-          <div className="flex justify-between mb-16">
+          <div className="flex flex-col md:flex-row justify-between mb-16 ">
             <div className="flex gap-5">
               <Logo />
               <div className="font-bold text-2xl mb-5">
@@ -138,7 +138,7 @@ const SearchResult = () => {
             <Search />
           </div>
 
-          <div className="flex gap-10 w-full">
+          <div className="flex flex-col md:flex-row gap-10 w-full">
             <Sidebar onQueryParameters={handleQueryParameters} />
             <Comments
               tweets={tweetArr}
