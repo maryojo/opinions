@@ -5,16 +5,17 @@ const DateTime = (commentDateTime) => {
   dateTime = new Date(dateTime);
   const currentDate = new Date().toDateString();
 
-  const commentDate = dateTime.toDateString();
-  const commentTime = dateTime.toLocaleTimeString();
+  // const commentDate = dateTime.toDateString();
+  // const commentTime = dateTime.toLocaleTimeString();
 
-  if(currentDate === commentDate){
-    commentDate = "Today";
-  }
+  // if(currentDate === commentDate){
+  //   commentDate = "Today";
+  // }
   return (
     <div className='flex justify-between mt-5 text-slate-500'>
-      <p className='text-sm'>{commentDate}</p>
-      <p className='text-sm'>{commentTime}</p>
+      {/* <p className='text-sm'>{commentDate}</p>
+      <p className='text-sm'>{commentTime}</p> */}
+      {dateTime}
     </div>
   )
 }
