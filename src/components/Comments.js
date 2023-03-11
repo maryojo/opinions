@@ -15,7 +15,7 @@ const Comments = ({ tweets, mediaData, timeData }) => {
             <p>{line}</p>
           ))}
           <TweetMedia data={mediaData[index]} />
-          <DateTime commentDateTime={timeData[index]} />
+          {/* <DateTime commentDateTime={timeData[index]} /> */}
         </div>
       ))}
     </section>
