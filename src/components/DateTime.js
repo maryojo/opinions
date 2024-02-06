@@ -1,7 +1,7 @@
 import React from 'react'
 
 const DateTime = (commentDateTime) => {
- let dateTime = commentDateTime.commentDateTime;
+ let dateTime = commentDateTime;
   dateTime = new Date(dateTime);
   const currentDate = new Date().toDateString();
 

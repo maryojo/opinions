@@ -14,7 +14,10 @@ const Comments = ({ tweets, mediaData, timeData }) => {
           {tweet.split("\n").map((line) => (
             <p>{line}</p>
           ))}
-          <TweetMedia data={mediaData[index]} />
+          <div className='w-100 bg-cover flex justify-center my-5'>
+            <img src={mediaData[index]} className="max-w-md"/>
+          </div>
+          {/* <TweetMedia data={mediaData[index]} /> */}
           {/* <DateTime commentDateTime={timeData[index]} /> */}
         </div>
       ))}

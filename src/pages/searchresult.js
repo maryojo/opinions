@@ -46,24 +46,27 @@ const SearchResult = () => {
 
   //stored data in localstorage for development
 
-  if (localStorage.getItem("tweetArr")) {
-    [tweetData, tweetError, tweetLoading] = JSON.parse(
-      localStorage.getItem("tweetArr")
-    );
-  } else {
+  // if (localStorage.getItem("tweetArr")) {
+  //   [tweetData, tweetError, tweetLoading] = JSON.parse(
+  //     localStorage.getItem("tweetArr")
+  //   );
+  // } else {
     GetTweetData(searchTerm);
-  }
+  // }
 
   function GetTweetData(term) {
     [tweetData, tweetError, tweetLoading] = useAxios({
       axiosInstance: axios,
       method: "GET",
-      url: "https://twitter135.p.rapidapi.com/Search/",
+      url: 'https://twitter154.p.rapidapi.com/search/search',
       requestConfig: {
         params: {
-          q: term,
-          count: "20",
+          query: term,
         },
+        headers: {
+          'X-RapidAPI-Key': 'dea11613ffmsh2a872dfd45e04c4p1b7b3cjsn3f222430ea40',
+          'X-RapidAPI-Host': 'twitter154.p.rapidapi.com'
+        }
       },
     });
   }
@@ -89,7 +92,7 @@ const SearchResult = () => {
       <div className="h-screen flex flex-col gap-3 justify-center items-center">
         <Loader />
         <p className="text-center">
-          Please wait while we listen to conversations...
+          Please wait while we listen...
         </p>
       </div>
     );
@@ -102,10 +105,10 @@ const SearchResult = () => {
     );
 
   if (data) {
-    Object.entries(data?.globalObjects?.tweets).map(([key, value]) => {
-      tweetArr.push(value?.full_text);
-      mediaDataArr.push(value?.entities?.media);
-      dateTimeDataArr.push(value?.created_at);
+    Object.entries(data?.results).map(([key, value]) => {
+      tweetArr.push(value?.text);
+      mediaDataArr.push(value?.media_url);
+      dateTimeDataArr.push(value?.creation_date);
     });
   }
   // console.log(mediaDataArr);
